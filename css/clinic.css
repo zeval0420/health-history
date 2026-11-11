@@ -1,2 +1,9 @@
 body { background: #f6f8fa; }
 .login-box { max-width: 380px; margin: 80px auto; }
+.cl-ac-wrap { position: relative; }
+.cl-ac-list { position: absolute; z-index: 2000; left: 0; right: 0; top: 100%; background: #fff; border: 1px solid #ccc; border-top: 0; max-height: 260px; overflow-y: auto; box-shadow: 0 4px 8px rgba(0,0,0,.12); }
+.cl-ac-item { padding: 6px 10px; cursor: pointer; border-bottom: 1px solid #f0f0f0; }
+.cl-ac-item:hover, .cl-ac-item.active { background: #e8f0fe; }
+.cl-ac-item small { color: #777; display: block; }
+.cl-ac-item .label { margin-left: 6px; }
+.autofill-box { background: #f0f7ff; border: 1px solid #cfe2ff; border-radius: 4px; padding: 10px; margin-bottom: 15px; }

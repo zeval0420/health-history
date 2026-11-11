@@ -14,6 +14,14 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Health data: never cache, never frame, no sniffing.
+if (!headers_sent()) {
+    header('Cache-Control: no-store');
+    header('X-Frame-Options: DENY');
+    header('X-Content-Type-Options: nosniff');
+    header('Referrer-Policy: same-origin');
+}
+
 $cl_timeout = 28800; // 8 hours
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $cl_timeout) {
     session_unset();

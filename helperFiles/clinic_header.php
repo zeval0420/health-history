@@ -12,7 +12,14 @@ $cl_page = basename($_SERVER['PHP_SELF']);
 <title><?= htmlspecialchars($pageTitle) ?></title>
 <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/clinic.css">
+<?php if (!empty($pageAssets) && in_array('datatables', $pageAssets, true)): ?>
+<link rel="stylesheet" href="assets/vendor/datatables/css/dataTables.bootstrap.min.css">
+<?php endif; ?>
 <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<?php if (!empty($pageAssets) && in_array('datatables', $pageAssets, true)): ?>
+<script src="assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="assets/vendor/datatables/js/dataTables.bootstrap.min.js"></script>
+<?php endif; ?>
 <script>
 // Send the CSRF token with every same-origin jQuery request.
 $.ajaxPrefilter(function (o, orig, xhr) {

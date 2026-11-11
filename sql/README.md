@@ -14,3 +14,8 @@ for f in sql/2026-11-11_0*.sql; do mysql -u root dbadmin < "$f"; done
 Create the first login (after migrating): `php tools/clinic_create_user.php <username> "<Full Name>"` (prompts for a password).
 
 Naming: `YYYY-MM-DD_NN_description.sql`. Each file ends with an `INSERT IGNORE INTO schema_migrations`. Seed data goes in `sql/seed/`.
+
+Seed data (autocomplete suggestions), after migration 04:
+```
+mysql -u root dbadmin < sql/seed/clinic_lookup_seed.sql
+```

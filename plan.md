@@ -78,6 +78,9 @@ health-history/
 ```
 `clinic_record_types.php` drives the UI: adding a new record type = one config entry + one migration, no new page.
 
+## Status
+Phases 1-6 are written (see README.md). None of it has been run against a live PHP/MySQL yet; first job is to run the migrations and click through every page.
+
 ## Phases
 1. **Foundation:** `sql/` migrations (users, teachers, schema_migrations), login, session/CSRF, header/footer.
 2. **Teachers:** DataTable with add/edit/soft-delete rows, search by name/employee no., fresh entry plus `accounts` autofill.

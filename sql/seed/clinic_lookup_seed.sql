@@ -1,0 +1,27 @@
+-- Starter autocomplete suggestions. Safe to re-run (INSERT IGNORE). use_count 0 so values the clinic
+-- actually types rank above these. Free text is always allowed; these are only suggestions.
+INSERT IGNORE INTO `clinic_lookup` (`category`, `value`, `use_count`) VALUES
+('vaccine','COVID-19',0),('vaccine','Influenza (Flu)',0),('vaccine','Hepatitis B',0),('vaccine','Tdap',0),
+('vaccine','Td (Tetanus-Diphtheria)',0),('vaccine','Tetanus Toxoid',0),('vaccine','Pneumococcal',0),
+('vaccine','MMR',0),('vaccine','Varicella (Chickenpox)',0),('vaccine','HPV',0),('vaccine','Typhoid',0),
+('vaccine','Hepatitis A',0),('vaccine','Anti-Rabies',0),('vaccine','Shingles (Zoster)',0),
+('dose_label','1st dose',0),('dose_label','2nd dose',0),('dose_label','3rd dose',0),('dose_label','Booster',0),('dose_label','Annual',0),
+('medication','Paracetamol',0),('medication','Ibuprofen',0),('medication','Amlodipine',0),('medication','Losartan',0),
+('medication','Metformin',0),('medication','Atorvastatin',0),('medication','Salbutamol',0),('medication','Omeprazole',0),
+('medication','Cetirizine',0),('medication','Amoxicillin',0),('medication','Levothyroxine',0),('medication','Aspirin',0),
+('frequency','Once daily',0),('frequency','Twice daily',0),('frequency','Three times daily',0),('frequency','Every 8 hours',0),
+('frequency','As needed',0),('frequency','At bedtime',0),
+('condition','Hypertension',0),('condition','Diabetes mellitus',0),('condition','Asthma',0),('condition','Hyperlipidemia',0),
+('condition','Thyroid disorder',0),('condition','Gastritis',0),('condition','Migraine',0),('condition','Allergic rhinitis',0),
+('condition','Tuberculosis',0),('condition','COVID-19',0),('condition','Dengue',0),('condition','Urinary tract infection',0),
+('condition_status','Active',0),('condition_status','Resolved',0),('condition_status','Controlled',0),('condition_status','Under monitoring',0),
+('allergen','Penicillin',0),('allergen','Shellfish',0),('allergen','Peanuts',0),('allergen','Dust',0),('allergen','Sulfa drugs',0),('allergen','Eggs',0),
+('reaction','Rash',0),('reaction','Hives',0),('reaction','Itching',0),('reaction','Swelling',0),('reaction','Difficulty breathing',0),('reaction','Anaphylaxis',0),
+('severity','Mild',0),('severity','Moderate',0),('severity','Severe',0),
+('complaint','Headache',0),('complaint','Fever',0),('complaint','Cough and colds',0),('complaint','Stomach ache',0),
+('complaint','Dizziness',0),('complaint','Body pain',0),('complaint','High blood pressure',0),
+('action_taken','Gave medication',0),('action_taken','Rest in clinic',0),('action_taken','Referred to hospital',0),('action_taken','Sent home',0),
+('sex','Female',0),('sex','Male',0),
+('blood_type','A+',0),('blood_type','A-',0),('blood_type','B+',0),('blood_type','B-',0),
+('blood_type','AB+',0),('blood_type','AB-',0),('blood_type','O+',0),('blood_type','O-',0),
+('other_type','Physical exam',0),('other_type','Laboratory result',0),('other_type','Medical certificate',0);
