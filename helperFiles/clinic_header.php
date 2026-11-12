@@ -1,6 +1,7 @@
 <?php
 // Usage: set $pageTitle (optional), include this, output page, include clinic_footer.php.
 $pageTitle = $pageTitle ?? 'Clinic Health History';
+$bodyClass = $bodyClass ?? '';
 $cl_user = $_SESSION['clinic_full_name'] ?? '';
 $cl_page = basename($_SERVER['PHP_SELF']);
 ?><!DOCTYPE html>
@@ -13,6 +14,7 @@ $cl_page = basename($_SERVER['PHP_SELF']);
 <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="assets/design/tokens.css">
 <link rel="stylesheet" href="css/clinic.css">
+<?php if ($bodyClass === 'auth-page'): ?><link rel="stylesheet" href="css/login.css"><?php endif; ?>
 <?php if (!empty($pageAssets) && in_array('datatables', $pageAssets, true)): ?>
 <link rel="stylesheet" href="assets/vendor/datatables/css/dataTables.bootstrap.min.css">
 <?php endif; ?>
@@ -29,7 +31,7 @@ $.ajaxPrefilter(function (o, orig, xhr) {
 });
 </script>
 </head>
-<body>
+<body class="<?= htmlspecialchars($bodyClass) ?>">
 <?php if (clinic_is_logged_in()): ?>
 <nav class="navbar navbar-default">
   <div class="container">
