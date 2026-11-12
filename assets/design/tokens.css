@@ -1,0 +1,72 @@
+/* ============================================================
+   tokens.css — Reserve-a-Lab design tokens (portable starter)
+   Colors are ROLES with a per-mode value. Components must use
+   the role (var(--color-*)), never a raw hex. Dark mode is a
+   future addition: fill the dark block, nothing else changes.
+   ============================================================ */
+
+/* Self-hosted fonts: adjust the path to where /fonts is copied */
+@font-face { font-family:'Inter'; font-style:normal; font-weight:300 700; font-display:swap;
+  src:url(fonts/inter/inter-v20-latin-ext.woff2) format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Inter'; font-style:normal; font-weight:300 700; font-display:swap;
+  src:url(fonts/inter/inter-v20-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+/* Metric-matched fallback so the font swap doesn't shift layout */
+@font-face { font-family:'Inter Fallback'; src:local('Arial'),local('ArialMT');
+  size-adjust:105.6%; ascent-override:91.7%; descent-override:22.8%; line-gap-override:0%; }
+
+:root {
+  color-scheme: light;
+
+  /* Brand (school blue) */
+  --color-primary:        #0B1B62;
+  --color-primary-light:  #152985;
+  --color-primary-mid:    #2B55C4;
+  --color-secondary:      #4F73D9;
+  --color-accent:         #0036af;
+  --header-gradient:      linear-gradient(to right, #0e0054, #0036af, #0e0054);
+
+  /* Surfaces & text */
+  --color-bg:             #EBF0FA;
+  --color-surface:        #FFFFFF;
+  --color-input-bg:       #F8FAFC;
+  --color-text-primary:   #0B1B62;
+  --color-text-secondary: #5E6E88;   /* login page value; universal.css uses #707070 */
+  --color-border:         #E2E8F0;
+
+  /* Status */
+  --color-success: #28a745;  --color-success-bg: #F0FDF4;  --color-success-border: #BBF7D0;
+  --color-danger:  #dc3545;  --color-danger-bg:  #FEF2F2;  --color-danger-border:  #FECACA;
+  --color-warning: #ffc107;  --color-warning-text: #856404;
+  --color-info:    #17a2b8;
+  --color-neutral: #6c757d;
+
+  /* Typography */
+  --font-family: 'Inter','Inter Fallback',system-ui,-apple-system,sans-serif;
+
+  /* Spacing */
+  --space-xs:4px; --space-sm:8px; --space-md:16px; --space-lg:24px; --space-xl:32px;
+
+  /* Radius */
+  --radius-card:16px; --radius-input:12px; --radius-btn:20px; --radius-badge:50%;
+
+  /* Shadows */
+  --shadow-card:  0 4px 20px rgba(0,0,0,.05);
+  --shadow-hover: 0 8px 20px rgba(43,85,196,.2);
+  --shadow-modal: 0 10px 40px rgba(0,0,0,.2);
+  --shadow-header:0 2px 12px rgba(0,0,0,.18);
+
+  /* Motion */
+  --transition-base: all .3s cubic-bezier(.4,0,.2,1);
+  --transition-fast: all .2s ease;
+
+  /* Breakpoints (reference only; media queries can't read vars) */
+  /* phone <= 430px · tablet <= 768px · laptop > 768px */
+}
+
+/* Dark mode — DEFERRED. Palette not yet decided; the header gradient stays as-is. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  /* --color-bg: …; --color-surface: …; --color-text-primary: …; etc. */
+}

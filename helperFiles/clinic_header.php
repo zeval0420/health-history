@@ -11,6 +11,7 @@ $cl_page = basename($_SERVER['PHP_SELF']);
 <meta name="csrf-token" content="<?= htmlspecialchars($_SESSION['csrf_token'] ?? '') ?>">
 <title><?= htmlspecialchars($pageTitle) ?></title>
 <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/design/tokens.css">
 <link rel="stylesheet" href="css/clinic.css">
 <?php if (!empty($pageAssets) && in_array('datatables', $pageAssets, true)): ?>
 <link rel="stylesheet" href="assets/vendor/datatables/css/dataTables.bootstrap.min.css">
@@ -32,7 +33,7 @@ $.ajaxPrefilter(function (o, orig, xhr) {
 <?php if (clinic_is_logged_in()): ?>
 <nav class="navbar navbar-default">
   <div class="container">
-    <div class="navbar-header"><a class="navbar-brand" href="clinic_dashboard.php">Clinic Health History</a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="clinic_dashboard.php"><img src="assets/design/logo/logo.webp" alt="">Clinic Health History</a></div>
     <ul class="nav navbar-nav">
       <li<?= $cl_page === 'clinic_dashboard.php' ? ' class="active"' : '' ?>><a href="clinic_dashboard.php">Dashboard</a></li>
       <li<?= in_array($cl_page, ['clinic_teachers.php', 'clinic_teacher.php']) ? ' class="active"' : '' ?>><a href="clinic_teachers.php">Teachers</a></li>

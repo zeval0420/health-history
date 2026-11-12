@@ -9,6 +9,7 @@ include('helperFiles/clinic_header.php');
 <div class="login-box panel panel-default">
   <div class="panel-heading"><h3 class="panel-title">Clinic Health History — Sign in</h3></div>
   <div class="panel-body">
+    <img class="login-logo" src="assets/design/logo/logo.webp" alt="School logo">
     <?php if ($expired): ?><div class="alert alert-warning">Your session expired. Please sign in again.</div><?php endif; ?>
     <div id="msg" class="alert alert-danger" style="display:none"></div>
     <form id="login-form">
